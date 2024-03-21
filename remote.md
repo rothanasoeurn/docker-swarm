@@ -5,7 +5,7 @@ ssh -i "mac_ssh.pem" ubuntu@ip_machine "mkdir -p scripts"
 
 scp -i "mac_ssh.pem" install_docker.sh ubuntu@ip_machine:scripts/install_docker.sh
 
-scp -i "mac_ssh.pem" portainer-stack.yml ubuntu@47.129.35.209:portainer-stack.yml
+scp -i "mac_ssh.pem" stack/portainer-stack.yml ubuntu@47.129.35.209:portainer-stack.yml
 ```
 
 ## Manager01 (leader)
