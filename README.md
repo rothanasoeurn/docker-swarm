@@ -13,62 +13,61 @@
   ssh -i "/localPath/your_ssh.pem" username@dns
   ```
 
-### Create Folder and Copy File to Remote Server
+#### Create Folder and Copy File to Remote Server
 
-#### Create folder scripts
+- Create folder scripts
 
-```sh
-ssh -i "/localPath/your_ssh.pem" ubuntu@127.0.0.1 "mkdir -p scripts"
-```
+  ```sh
+  ssh -i "/localPath/your_ssh.pem" ubuntu@127.0.0.1 "mkdir -p scripts"
+  ```
 
-#### Copy file to scripts folder
-
-```sh
-scp -i "/localPath/your_ssh.pem" /localPath/install_docker.sh ubuntu@127.0.0.1:remote/path
-```
+- Copy file to scripts folder
+  ```sh
+  scp -i "/localPath/your_ssh.pem" /localPath/install_docker.sh ubuntu@127.0.0.1:remote/path
+  ```
 
 ## Set Up Docker Swarm
 
-#### Initial docker swarm
+- Initial docker swarm
 
-```sh
-docker swarm init
-```
+  ```sh
+  docker swarm init
+  ```
 
-#### Init docker swarm with assign IP
+- Init docker swarm with assign IP
 
-```sh
-docker swarm init --advertise-addr <MANAGER-IP>
-```
+  ```sh
+  docker swarm init --advertise-addr <MANAGER-IP>
+  ```
 
-#### Join node as manager
+- Join node as manager
 
-```sh
-docker swarm join-token manager
-```
+  ```sh
+  docker swarm join-token manager
+  ```
 
-#### Join node as worker
+- Join node as worker
 
-```sh
-docker swarm join-token worker
-```
+  ```sh
+  docker swarm join-token worker
+  ```
 
 ## Deploy portainer stack
 
-#### Create docker network
+- Create docker network
 
-```sh
-docker network create -d overlay --attachable proxy
-```
+  ```sh
+  docker network create -d overlay --attachable proxy
+  ```
 
-#### Create docker volume
+- Create docker volume
 
-```sh
-docker volume create portainer_data
-```
+  ```sh
+  docker volume create portainer_data
+  ```
 
-#### Deploy portainer
+- Deploy portainer
 
-```sh
-docker stack deploy -c docker-compose.yml portainer-stack
-```
+  ```sh
+  docker stack deploy -c docker-compose.yml portainer-stack
+  ```
