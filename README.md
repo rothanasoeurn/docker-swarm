@@ -69,5 +69,5 @@
 - Deploy portainer
 
   ```sh
-  docker stack deploy -c docker-compose.yml portainer-stack
+  docker stack deploy -c portainer-stack.yml portainer-stack
   ```
