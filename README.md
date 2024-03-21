@@ -71,3 +71,8 @@
   ```sh
   docker stack deploy -c portainer-stack.yml portainer-stack
   ```
+
+- Remove stack
+  ```sh
+  docker stack rm portainer-stack
+  ```

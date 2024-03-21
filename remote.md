@@ -24,7 +24,15 @@ scp -i "mac_ssh.pem" stack/portainer-stack.yml ubuntu@47.129.35.209:portainer-st
   ssh -i "mac_ssh.pem" ubuntu@54.255.195.2
   ```
 
-  ## Worker01
+## Manager03
+
+- Access by Public IP
+
+  ```sh
+  ssh -i "mac_ssh.pem" ubuntu@18.141.169.77
+  ```
+
+## Worker01
 
 - Access by Public IP
 
@@ -32,7 +40,7 @@ scp -i "mac_ssh.pem" stack/portainer-stack.yml ubuntu@47.129.35.209:portainer-st
   ssh -i "mac_ssh.pem" ubuntu@13.251.157.81
   ```
 
-  ## Worker02
+## Worker02
 
 - Access by Public IP
   ```sh
