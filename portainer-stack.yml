@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  agent:
+    image: portainer/agent # Replace with desired Portainer Agent version
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      - proxy
+    deploy:
+      mode: global
+      # restart_policy: always
+      # placement:
+      #   constraints: [node.platform.os == linux]
+
+  portainer:
+    image: portainer/portainer-ce # Replace with desired Portainer CE version
+    command: -H tcp://tasks.agent:9001 --tlsskipverify
+    ports:
+      - '9443:9443'
+      - '9000:9000'
+    volumes:
+      - portainer_data:/data
+    networks:
+      - proxy
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+      # restart_policy: always
+
+networks:
+  proxy:
+    external: true
+
+volumes:
+  portainer_data:
