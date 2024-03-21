@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    deploy:
+      placement:
+        constraints: [node.role == worker]
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootPassword
+      - MYSQL_DATABASE=db_sample
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=user_pass
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      database:
+        aliases:
+          - 'mysql.sabay.swarm'
+          - 'mysql.sabay.com'
+
+  wordpress:
+    image: wordpress:latest
+    deploy:
+      placement:
+        constraints: [node.role == worker]
+    ports:
+      - 8080:80
+    environment:
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_USER=user
+      - WORDPRESS_DB_PASSWORD=user_pass
+      - WORDPRESS_DB_NAME=db_sample
+    networks:
+      - database
+
+volumes:
+  db:
+
+networks:
+  database:
+    external: true
