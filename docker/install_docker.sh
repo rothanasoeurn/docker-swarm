@@ -23,7 +23,7 @@ sudo apt-get update
 sudo apt-get install docker-ce -y
 
 # Allow permission
-sudo chmod 777 /var/run/docker.sock
+# sudo chmod 777 /var/run/docker.sock
 
 # Verify Docker is installed and working
 sudo systemctl status docker
