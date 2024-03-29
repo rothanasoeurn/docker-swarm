@@ -24,6 +24,8 @@ sudo apt install glusterfs-server glusterfs-client
 ```bash
 sudo gluster peer probe <node2_ip> <node3_ip> ...  # Replace with IPs of other nodes
 sudo gluster volume create myvolume replica 3 <brick1_path>:<brick1_name>  # Replace with actual paths and names
+#Sample
+sudo gluster volume create docker-swarm-volume replica 3 manager01:/gluster/volumes
 ```
 
 - Replace `<node2_ip>`, `<node3_ip>`, `<brick1_path>`, and `<brick1_name>` with the actual IP addresses of other nodes, a directory path to be used as a brick on each node, and a name for the brick.
