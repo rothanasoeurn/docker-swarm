@@ -1,5 +1,9 @@
 # Script for demo
 
+**Noted**
+
+- If you using EC2 do not forget [`open port`](/ec2-security-group.md)
+
 ## Remote Server
 
 - Remote access by Public IP
