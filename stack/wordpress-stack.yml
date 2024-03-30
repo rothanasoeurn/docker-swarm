@@ -20,9 +20,9 @@ services:
 
   wordpress:
     image: wordpress:latest
-    deploy:
-      placement:
-        constraints: [node.role == worker]
+    # deploy:
+    #   placement:
+    #     constraints: [node.role == worker]
     ports:
       - 8080:80
     environment:
