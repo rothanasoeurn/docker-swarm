@@ -1,11 +1,11 @@
 ## Copy file
 
 ```sh
-ssh -i "mac_ssh.pem" ubuntu@ip_machine "mkdir -p scripts"
+ssh -i "your_ssh_key.pem" ubuntu@[server_ip] "mkdir -p scripts"
 
-scp -i "mac_ssh.pem" docker/install_docker.sh ubuntu@18.141.169.77:install_docker.sh
+scp -i "your_ssh_key.pem" docker/install_docker.sh ubuntu@[server_ip]:install_docker.sh
 
-scp -i "mac_ssh.pem" stack/portainer-stack.yml ubuntu@47.129.35.209:portainer-stack.yml
+scp -i "your_ssh_key.pem" stack/portainer-stack.yml ubuntu@[server_ip]):portainer-stack.yml
 ```
 
 ## Manager01 (leader)
@@ -13,7 +13,7 @@ scp -i "mac_ssh.pem" stack/portainer-stack.yml ubuntu@47.129.35.209:portainer-st
 - Access by Public IP
 
   ```sh
-  ssh -i "mac_ssh.pem" ubuntu@13.250.97.62
+  ssh -i "your_ssh_key.pem" ubuntu@[server_ip]
   ```
 
 ## Manager02
@@ -21,7 +21,7 @@ scp -i "mac_ssh.pem" stack/portainer-stack.yml ubuntu@47.129.35.209:portainer-st
 - Access by Public IP
 
   ```sh
-  ssh -i "mac_ssh.pem" ubuntu@13.215.161.57
+  ssh -i "your_ssh_key.pem" ubuntu@[server_ip]
   ```
 
 ## Manager03
@@ -29,7 +29,7 @@ scp -i "mac_ssh.pem" stack/portainer-stack.yml ubuntu@47.129.35.209:portainer-st
 - Access by Public IP
 
   ```sh
-  ssh -i "mac_ssh.pem" ubuntu@13.214.203.74
+  ssh -i "your_ssh_key.pem" ubuntu@[server_ip]
   ```
 
 ## Worker01
@@ -37,12 +37,12 @@ scp -i "mac_ssh.pem" stack/portainer-stack.yml ubuntu@47.129.35.209:portainer-st
 - Access by Public IP
 
   ```sh
-  ssh -i "mac_ssh.pem" ubuntu@18.143.76.105
+  ssh -i "your_ssh_key.pem" ubuntu@[server_ip]
   ```
 
 ## Worker02
 
 - Access by Public IP
   ```sh
-  ssh -i "mac_ssh.pem" ubuntu@13.215.190.83
+  ssh -i "your_ssh_key.pem" ubuntu@[server_ip]
   ```
